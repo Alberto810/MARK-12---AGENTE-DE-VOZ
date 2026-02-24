@@ -2,4 +2,5 @@
 *venv/
 #ocultar a __pycache__
 *__pycache__/
-
+#ocultar o gitignore
+.gitignore
