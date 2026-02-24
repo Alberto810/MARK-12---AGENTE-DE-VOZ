@@ -1,0 +1,2 @@
+IDIOMA = "pt-BR"
+TEMPO_AMBIENTE = 0.5
