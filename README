@@ -1,12 +1,13 @@
-# 🤖 Assistente de Voz em Python (Moderno)
+🤖 Assistente de Voz em Python (Moderno)
 
-Um assistente de voz leve, moderno e compatível com **Python 3.14+**, capaz de ouvir comandos por voz e executar ações no Windows — **sem PyAudio**.
-
-> 🚀 Projeto ideal para estudos de IA, automação e interfaces por voz.
+Um assistente de voz leve, moderno e compatível com Python 3.14+. O projeto permite controlar aplicações do Windows 
+por meio de comandos de voz em português, sem depender do PyAudio, oferecendo uma solução mais simples, estável e atualizada. 
+Com estrutura modular e fácil de expandir, é ideal tanto para estudos de inteligência artificial e automação quanto para 
+quem deseja evoluir o projeto para um assistente pessoal mais avançado no estilo Jarvis. 🚀
 
 ---
 
-## ✨ Demonstração
+✨ Demonstração
 
 🎤 O assistente escuta comandos como:
 
@@ -19,12 +20,10 @@ E executa automaticamente no sistema.
 
 ---
 
-## 🧠 Tecnologias Utilizadas
+🧠 Tecnologias Utilizadas
 
 - Python 3.14+
 - SpeechRecognition
 - sounddevice
 - NumPy
 - Google Speech API
-
----
