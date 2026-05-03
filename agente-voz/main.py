@@ -4,9 +4,9 @@ import numpy as np
 
 from comandos import executar_comando
 from config import IDIOMA, TEMPO_AMBIENTE
+from wakeword import detectar_wake_word
 
-
-def gravar_audio(duracao=5, sample_rate=16000):
+def gravar_audio(duracao=6.5, sample_rate=16000):
     print("🎤 Ouvindo...")
     audio = sd.rec(int(duracao * sample_rate),
         samplerate=sample_rate,
@@ -31,26 +31,26 @@ def ouvir_microfone():
         frase = recognizer.recognize_google(audio_data, language=IDIOMA)
 
         print("🗣️ Você disse:", frase)
-
-        return executar_comando(frase)
-
+        
     except sr.UnknownValueError:
-        print("❌ Não entendi")
-    except sr.RequestError as e:
-        print(f"❌ Erro no serviço: {e}")
-    except Exception as e:
-        print(f"⚠️ Erro inesperado: {e}")
+        print("Não entendi o áudio")
+        return None
 
-    return False
+    ativado, comando = detectar_wake_word(frase)
+
+    if ativado:
+        print("🧠 Wake word detectada")
+
+    if comando:
+        return executar_comando(comando)
+    else:
+        print("🤖 Aguardando comando após 'Jarvis'...")
+        return False
 
 
-def main():
-    print("🤖 Assistente iniciado...")
-
+def main_loop():
+    
     while True:
         if ouvir_microfone():
             break
 
-
-if __name__ == "__main__":
-    main()
